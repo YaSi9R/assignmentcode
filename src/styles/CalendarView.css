@@ -1,0 +1,273 @@
+/* Weekly Calendar View Styles */
+.calendar-view-weekly {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+.calendar-header-weekly {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.calendar-title-weekly {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.calendar-nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.calendar-nav-weekly {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: rgba(248, 250, 252, 0.8);
+  border-radius: 0.375rem;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-nav-weekly:hover {
+  background: #f1f5f9;
+  color: #374151;
+}
+
+.weekly-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.weekly-day-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+}
+
+.day-highlighted {
+  background: #ede9fe;
+}
+
+.day-today {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border: 2px solid #3b82f6;
+}
+
+.day-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+}
+
+.day-name {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.day-number {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.day-number-highlighted {
+  color: #7c3aed;
+}
+
+.day-number-today {
+  color: #1d4ed8;
+}
+
+.appointment-count-badge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.time-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.time-slot {
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.time-slot--default {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.time-slot--default:hover {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.time-slot--primary {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.time-slot--primary:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.time-slot--secondary {
+  background: #8b5cf6;
+  color: white;
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
+}
+
+.time-slot--secondary:hover {
+  background: #7c3aed;
+  transform: translateY(-1px);
+}
+
+.appointment-summary {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.summary-label {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.summary-count {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .weekly-calendar-grid {
+    gap: 0.5rem;
+  }
+
+  .time-slot {
+    font-size: 0.625rem;
+    padding: 0.25rem 0.375rem;
+  }
+
+  .day-number {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-view-weekly {
+    padding: 1rem;
+  }
+
+  .weekly-calendar-grid {
+    gap: 0.375rem;
+  }
+
+  .weekly-day-column {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .time-slot {
+    font-size: 0.625rem;
+    padding: 0.25rem 0.25rem;
+  }
+
+  .day-number {
+    font-size: 1rem;
+  }
+
+  .day-name {
+    font-size: 0.625rem;
+  }
+
+  .appointment-summary {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .summary-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 640px) {
+  .weekly-calendar-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 0.5rem;
+  }
+
+  .weekly-day-column:nth-child(n + 5) {
+    grid-row: 2;
+  }
+
+  .weekly-day-column:nth-child(5) {
+    grid-column: 1;
+  }
+
+  .weekly-day-column:nth-child(6) {
+    grid-column: 2;
+  }
+
+  .weekly-day-column:nth-child(7) {
+    grid-column: 3;
+  }
+}
