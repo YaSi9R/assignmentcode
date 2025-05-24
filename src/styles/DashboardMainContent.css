@@ -1,7 +1,8 @@
 .dashboard-main {
   flex: 1;
-  /* padding: 1.5rem; */
+  padding: 1.5rem;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .dashboard-main__header {
@@ -16,22 +17,22 @@
 }
 
 .dashboard-column {
-  flex: 1; 
+   flex: 1;
   padding: 1.5rem;
-
+  box-sizing: border-box;
     
 
 }
 .dashboard-column-right {
-  flex: 1;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-right: 1.5rem;
+ flex: 1;
+  padding: 1.5rem;
   background: rgba(221, 244, 246, 0.95);
   border-top-right-radius: 20px;    
-border-bottom-right-radius: 20px;
- transform: scale(0.9) translateY(-45px);
-    
+  border-bottom-right-radius: 20px;
+  transform-origin: top center; /* make scale transform nicer */
+  transform: scale(0.9) translateY(-45px);
+  box-sizing: border-box;
+  overflow-x: hidden;
 
 }
 
@@ -41,7 +42,8 @@ border-bottom-right-radius: 20px;
   align-items: center;
   width: auto;
   justify-content: space-between;
-
+  gap: 10px;
+  width: 100%;
 }
 .search-icon {
   flex-shrink: 0; 
@@ -57,8 +59,11 @@ border-bottom-right-radius: 20px;
   border: 1px solid #e2e8f0;
   border-radius: 0.75rem;
   background: rgba(248, 250, 252, 0.8);
-  font-size: 0.875rem;
+  
   transition: all 0.2s ease;
+   flex-grow: 1;
+  padding-left: 2.5rem;
+  font-size: 0.875rem;
 }
 
 
@@ -137,16 +142,21 @@ border-bottom-right-radius: 20px;
   gap: 1.5rem;
 }
 
-
+/* Responsive styles */
 @media (max-width: 1024px) {
-  .dashboard-main__content {
-    grid-template-columns: 1fr;
+  .dashboard-main__columns {
+    flex-direction: column;
   }
 
-  .dashboard-main__header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+  .dashboard-column-right {
+    transform: none;
+    border-radius: 20px;
+    margin-top: 1rem;
+  }
+
+  .dashboard-column,
+  .dashboard-column-right {
+    padding: 1rem;
   }
 }
 
@@ -159,8 +169,13 @@ border-bottom-right-radius: 20px;
     font-size: 1.5rem;
   }
 
-  .dashboard-controls {
-    width: 100%;
-    justify-content: space-between;
+  .dashboard-column,
+  .dashboard-column-right {
+    padding: 0.75rem;
+  }
+
+  /* Make search input bigger on small */
+  .search-input {
+    font-size: 1rem;
   }
 }
