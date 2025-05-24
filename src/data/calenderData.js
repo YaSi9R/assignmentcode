@@ -1,119 +1,46 @@
-/**
- * Calendar data including multiple months and appointments
- */
-export const calendarData = {
-  currentMonth: 9, // October (0-indexed)
-  currentYear: 2021,
-  months: [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+// Calendar appointment data
+export const appointmentData = {
+  "2021-10-25": [
+    { time: "10:00", type: "consultation" },
+    { time: "11:00", type: "checkup" },
+    { time: "12:00", type: "consultation" }
   ],
-  // Generate calendar data for multiple months
-  getMonthData: (month, year) => {
-    const daysInMonth = new Date(year, month + 1, 0).getDate()
-    const firstDayOfMonth = new Date(year, month, 1).getDay()
-    const days = []
-
-    // Add empty cells for days before the first day of the month
-    for (let i = 0; i < firstDayOfMonth; i++) {
-      days.push(null)
-    }
-
-    // Add all days of the month
-    for (let day = 1; day <= daysInMonth; day++) {
-      const hasAppointments = Math.random() > 0.7 // Random appointments for demo
-      const isToday = month === 9 && year === 2021 && day === 26 // Oct 26, 2021 as today
-      const appointmentCount = day === 26 ? 3 : day === 30 ? 4 : hasAppointments ? Math.floor(Math.random() * 3) + 1 : 0
-
-      days.push({
-        date: day,
-        hasAppointments: appointmentCount > 0,
-        isToday: isToday,
-        appointments: appointmentCount,
-      })
-    }
-
-    return days
-  },
-  todayAppointments: [
-    {
-      id: 1,
-      time: "09:00",
-      title: "Dentist Appointment",
-      doctor: "Dr. Cameron Williamson",
-      type: "consultation",
-      status: "confirmed",
-      icon: "🦷",
-    },
-    {
-      id: 2,
-      time: "11:00",
-      title: "Physiotherapy Session",
-      doctor: "Dr. Kevin Djones",
-      type: "therapy",
-      status: "confirmed",
-      icon: "🏃",
-    },
-    {
-      id: 3,
-      time: "14:00",
-      title: "Blood Test",
-      doctor: "Lab Technician",
-      type: "test",
-      status: "pending",
-      icon: "🩸",
-    },
+  "2021-10-26": [
+    { time: "08:00", type: "checkup" },
+    { time: "09:00", type: "consultation" },
+    { time: "10:00", type: "checkup" }
   ],
-  upcomingAppointments: [
-    {
-      id: 4,
-      date: "Tomorrow",
-      time: "10:00",
-      title: "Cardiologist Consultation",
-      doctor: "Dr. Sarah Johnson",
-      type: "consultation",
-      status: "confirmed",
-      icon: "❤️",
-    },
-    {
-      id: 5,
-      date: "Oct 28",
-      time: "15:30",
-      title: "Eye Examination",
-      doctor: "Dr. Michael Chen",
-      type: "examination",
-      status: "confirmed",
-      icon: "👁️",
-    },
-    {
-      id: 6,
-      date: "Oct 30",
-      time: "09:30",
-      title: "General Checkup",
-      doctor: "Dr. Emily Davis",
-      type: "checkup",
-      status: "confirmed",
-      icon: "🏥",
-    },
-    {
-      id: 7,
-      date: "Nov 2",
-      time: "11:15",
-      title: "Neurologist Visit",
-      doctor: "Dr. Robert Wilson",
-      type: "consultation",
-      status: "pending",
-      icon: "🧠",
-    },
+  "2021-10-27": [
+    { time: "12:00", type: "consultation" },
+    { time: "13:00", type: "checkup" }
   ],
+  "2021-10-28": [
+    { time: "10:00", type: "consultation" },
+    { time: "11:00", type: "checkup" }
+  ],
+  "2021-10-29": [
+    { time: "14:00", type: "consultation" },
+    { time: "15:00", type: "checkup" },
+    { time: "16:00", type: "consultation" }
+  ],
+  "2021-10-30": [
+    { time: "12:00", type: "consultation" },
+    { time: "14:00", type: "checkup" },
+    { time: "15:00", type: "consultation" }
+  ],
+  "2021-10-31": [
+    { time: "09:00", type: "checkup" },
+    { time: "10:00", type: "consultation" },
+    { time: "11:00", type: "checkup" }
+  ]
 }
+
+// Highlighted appointments (important ones)
+export const highlightedAppointments = {
+  "2021-10-26": ["09:00"],
+  "2021-10-28": ["11:00"],
+  "2021-10-30": ["12:00"]
+}
+
+// Day names for the calendar
+export const dayNames = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"]

@@ -1,7 +1,7 @@
 /* Dashboard main content styles */
 .dashboard-main {
   flex: 1;
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   overflow-y: auto;
 }
 
@@ -11,12 +11,67 @@
   justify-content: space-between;
   margin-bottom: 2rem;
 }
+.dashboard-main__columns {
+  display: flex;
+  gap: 20px; /* Optional spacing between columns */
+}
 
-.dashboard-title h1 {
-  font-size: 1.875rem;
+.dashboard-column {
+  flex: 1; /* Takes 50% of available width each if 2 columns */
+  padding: 1.5rem;
+
+    
+
+}
+.dashboard-column-right {
+  flex: 1; /* Takes 50% of available width each if 2 columns */
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-right: 1.5rem;
+  background: rgba(221, 244, 246, 0.95);
+  border-top-right-radius: 20px;    /* adjust radius as needed */
+border-bottom-right-radius: 20px;
+ transform: scale(0.9) translateY(-45px);
+    
+
+}
+
+.header__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: auto;
+  justify-content: space-between;
+
+}
+.search-icon {
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  width: full;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: rgba(248, 250, 252, 0.8);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+
+.dashboard-title {
+  font-size: .875rem;
   font-weight: 700;
   color: #3f5880;
   margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .dashboard-title p {
@@ -24,19 +79,27 @@
   font-size: 0.875rem;
 }
 
-.dashboard-controls {
+/* .dashboard-controls {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-}
+} */
 
 .week-indicator {
-  font-size: 0.875rem;
+  font-size: 10px;
   font-weight: 500;
   color: #2563eb;
   background: #dbeafe;
-  padding: 0.5rem 0.75rem;
+ padding: 10px;
   border-radius: 9999px;
+  display: flex; /* Added */
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.week-indicator-downArrow {
+  font-size: 20px;
 }
 
 .navigation-arrows {
@@ -44,6 +107,13 @@
   gap: 0.25rem;
 }
 
+.header__right {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+  margin-bottom: 10px;
+
+}
 .nav-arrow {
   padding: 0.5rem;
   border: none;

@@ -1,0 +1,19 @@
+/* Dashboard overview styles */
+.dashboard-overview {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 1.5rem;
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+ 
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .dashboard-overview {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}

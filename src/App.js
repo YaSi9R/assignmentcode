@@ -4,7 +4,6 @@ import DashboardMainContent from "./components/DashboardMainContent"
 import { navigationData } from "./data/navigationData"
 import { healthData } from "./data/healthData"
 import { appointmentsData } from "./data/appointmentsData"
-import { calendarData } from "./data/calenderData"
 import "./styles/App.css"
 
 /**
@@ -17,8 +16,8 @@ function App() {
       
       <Sidebar navigationItems={navigationData.general} toolItems={navigationData.tools} />
       <div className="app__main">
-        <Header />
-        <DashboardMainContent healthData={healthData} appointmentsData={appointmentsData} calendarData={calendarData} />
+        {/* <Header /> */}
+        <DashboardMainContent healthData={healthData}   />
       </div>
     </div>
   )

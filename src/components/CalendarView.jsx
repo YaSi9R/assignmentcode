@@ -1,182 +1,115 @@
 "use client"
 
 import { useState } from "react"
+import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
+import { appointmentsData } from "../data/appointmentsData";
 import "../styles/CalendarView.css"
 
-/**
- * CalendarView Component - Weekly calendar view using provided calendar data
- */
-const CalendarView = ({ calendarData }) => {
-  const [currentDate, setCurrentDate] = useState(new Date());
+interface CalendarViewProps {
+  initialDate?: Date
+}
 
+const appointments = {
+  "2021-10-24": ["10:00", "11:00", "12:00"],
+  "2021-10-25": ["08:00", "09:00", "10:00"],
+  "2021-10-26": ["12:00", "--", "13:00"],
+  "2021-10-27": ["10:00", "11:00", "--"],
+  "2021-10-28": ["14:00", "14:00", "16:00"],
+  "2021-10-29": ["12:00", "14:00", "15:00"],
+  "2021-10-30": ["09:00", "10:00", "11:00"],
+}
 
-  const goToPreviousDay = () => {
-  const newDate = new Date(currentDate);
-  newDate.setDate(currentDate.getDate() - 1);
-  setCurrentDate(newDate);
-};
+const highlights = {
+  "2021-10-25": ["09:00"],
+  "2021-10-27": ["11:00"],
+  "2021-10-30": ["12:00", "09:00"],
+}
 
-const goToNextDay = () => {
-  const newDate = new Date(currentDate);
-  newDate.setDate(currentDate.getDate() + 1);
-  setCurrentDate(newDate);
-};
+const dayNames = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"]
 
+const CalendarView = ({ initialDate = new Date(2021, 9, 25) }: CalendarViewProps) => {
+  const [currentDate, setCurrentDate] = useState(initialDate)
 
-  // Generate weekly data based on the calendar data
-const generateWeeklyData = () => {
-  const weekDays = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
-  const weekData = [];
+  const startOfWeek = new Date(currentDate)
+  startOfWeek.setDate(currentDate.getDate() - currentDate.getDay() + 1)
 
-  const selectedDate = new Date(currentDate);
-  const dayOfWeek = (selectedDate.getDay() + 6) % 7; // Adjust so Monday is 0
+  const week = Array.from({ length: 7 }, (_, i) => {
+    const date = new Date(startOfWeek)
+    date.setDate(startOfWeek.getDate() + i)
+    return date
+  })
 
-  // Get the start of the week (Monday)
-  const monday = new Date(selectedDate);
-  monday.setDate(selectedDate.getDate() - dayOfWeek);
+  const monthYear = currentDate.toLocaleDateString("en-US", { month: "long", year: "numeric" })
 
-  for (let i = 0; i < 7; i++) {
-    const day = new Date(monday);
-    day.setDate(monday.getDate() + i);
-
-    const dayNumber = day.getDate();
-    const dayLabel = weekDays[i];
-
-    let timeSlots = [];
-
-    const formattedDate = day.toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric'
-    });
-
-    // Sample appointment logic
-    if (dayNumber === 25) {
-      timeSlots = [
-        { time: "10:00", highlight: false },
-        { time: "11:00", highlight: false },
-        { time: "12:00", highlight: false },
-      ];
-    } else if (dayNumber === 26) {
-      timeSlots = calendarData.todayAppointments.map((apt) => ({
-        time: apt.time,
-        highlight: apt.status === "confirmed",
-        type: apt.type === "consultation" ? "primary" : "secondary",
-        title: apt.title,
-      }));
-    } else if (dayNumber === 27) {
-      timeSlots = [
-        { time: "12:00", highlight: false },
-        { time: "13:00", highlight: false },
-      ];
-    } else if (formattedDate === "Oct 28") {
-      const apt = calendarData.upcomingAppointments.find((a) => a.date === "Oct 28");
-      timeSlots = [
-        { time: "10:00", highlight: false },
-        {
-          time: apt?.time || "15:30",
-          highlight: !!apt,
-          type: "secondary",
-          title: apt?.title,
-        },
-      ];
-    } else if (formattedDate === "Oct 30") {
-      const apt = calendarData.upcomingAppointments.find((a) => a.date === "Oct 30");
-      timeSlots = [
-        { time: "12:00", highlight: true, type: "primary" },
-        {
-          time: apt?.time || "09:30",
-          highlight: !!apt,
-          type: "primary",
-          title: apt?.title,
-        },
-        { time: "14:00", highlight: true, type: "primary" },
-        { time: "15:00", highlight: false },
-      ];
-    }
-
-    weekData.push({
-      day: dayLabel,
-      date: dayNumber,
-      fullDate: day,
-      isToday: isSameDate(day, new Date()),
-      hasAppointments: timeSlots.some((slot) => slot.highlight),
-      appointmentCount: timeSlots.filter((slot) => slot.highlight).length,
-      timeSlots,
-      isHighlighted: timeSlots.filter((slot) => slot.highlight).length > 2,
-    });
+  const changeWeek = (offset: number) => {
+    const newDate = new Date(currentDate)
+    newDate.setDate(currentDate.getDate() + offset)
+    setCurrentDate(newDate)
   }
 
-  return weekData;
-};
+  const getKey = (date: Date) => date.toISOString().split("T")[0]
+  const getDayLabel = (date: Date) => dayNames[date.getDay() === 0 ? 6 : date.getDay() - 1]
 
-const isSameDate = (d1, d2) =>
-  d1.getDate() === d2.getDate() &&
-  d1.getMonth() === d2.getMonth() &&
-  d1.getFullYear() === d2.getFullYear();
-
-const weekData = generateWeeklyData();
-const monthName = currentDate.toLocaleString('default', { month: 'long' });
-    const customWeekOrder = ["Thurs", "Tues", "Sat", "Mon", "Wed", "Sun", "Fri"] // your custom order
-  const currentYear=["2025"]
   return (
+    <div className="calendar-container">
+      <div className="calendar-header">
+        <h2 className="calendar-title">{monthYear}</h2>
+        <div className="calendar-navigation">
+          <button onClick={() => changeWeek(-7)} className="nav-button" aria-label="Previous week">
 
-<div className="calendar-view-weekly">
-  <div className="calendar-header-weekly">
-    <h2 className="calendar-title-weekly">
-      {monthName} {currentYear}
-    </h2>
-    <div className="calendar-nav-buttons">
-      <button className="calendar-nav-weekly" onClick={goToPreviousDay} aria-label="Previous month" type="button">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" />
-        </svg>
-      </button>
-      <button className="calendar-nav-weekly" onClick={goToNextDay} aria-label="Next month" type="button">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" />
-        </svg>
-      </button>
-    </div>
-  </div>
+            <HiArrowNarrowLeft className="nav-icon" />
 
-  <div className="weekly-calendar-grid">
-    {customWeekOrder.map((dayName) => {
-      const dayData = weekData.find((d) => d.day === dayName)
-      if (!dayData) return null
+          </button>
+          <button onClick={() => changeWeek(7)} className="nav-button" aria-label="Next week">
+            <HiArrowNarrowRight className="nav-icon" />
 
-      return (
-        <div
-          key={dayData.date}
-          className={`weekly-day-column ${dayData.isHighlighted ? "day-highlighted" : ""} ${dayData.isToday ? "day-today" : ""}`}
-        >
-          <div className="day-header">
-            <span className="day-name">{dayData.day}</span>
-            <span
-              className={`day-number ${dayData.isHighlighted ? "day-number-highlighted" : ""} ${dayData.isToday ? "day-number-today" : ""}`}
-            >
-              {dayData.date}
-            </span>
-            {dayData.appointmentCount > 0 && (
-              <div className="appointment-count-badge">{dayData.appointmentCount}</div>
-            )}
-          </div>
-          <div className="time-slots">
-            {dayData.timeSlots.map((slot, timeIndex) => (
-              <div
-                key={timeIndex}
-                className={`time-slot ${slot.highlight ? `time-slot--${slot.type}` : "time-slot--default"}`}
-                title={slot.title || slot.time}
-              >
-                {slot.time}
-              </div>
-            ))}
-          </div>
+          </button>
         </div>
-      )
-    })}
-  </div>
-</div>
+      </div>
 
+      <div className="calendar-grid">
+        {week.map((date, i) => {
+          const key = getKey(date)
+          const slots = appointments[key] || []
+          const highlighted = highlights[key] || []
+          const isHighlightedColumn = date.getDate() === 26 // change to match today's date if dynamic
+
+          return (
+             <div key={i} className={`calendar-day ${isHighlightedColumn ? "highlight-column" : ""}`}>
+              <div className="day-name">{getDayLabel(date)}</div>
+              <div className="date-number">{date.getDate()}</div>
+              <div className="time-slots">
+                {slots.map((time, j) => (
+                  <div
+                    key={j}
+                    className={`time-slot ${highlighted.includes(time) ? "highlighted" : ""}`}
+                  >
+                    {time}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+      <div className="appointment-cards">
+        {appointmentsData.today.map((appointment, index) => (
+          <div key={index} className={`appointment-card appointment-card--${appointment.type}`}>
+            <div className="appointment-header">
+              <h3 className="appointment-title">{appointment.title}</h3>
+              <span className="appointment-icon" role="img" aria-label={appointment.title}>
+                {appointment.icon}
+              </span>
+            </div>
+            <p className="appointment-time">{appointment.time}</p>
+            <p className="appointment-doctor">{appointment.doctor}</p>
+          </div>
+        ))}
+      </div>
+
+
+
+    </div>
   )
 }
 
