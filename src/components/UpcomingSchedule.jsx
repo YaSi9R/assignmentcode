@@ -1,9 +1,7 @@
 import SimpleAppointmentCard from "../components/SimpleAppointmentCard"
 import "../styles/UpcomingSchedule.css"
 import { appointmentsData, upcomingAppointments } from '../data/appointmentsData';
-/**
- * UpcomingSchedule Component - Displays upcoming appointments organized by day
- */
+
 const UpcomingSchedule = () => {
   return (
     <div className="upcoming-schedule">

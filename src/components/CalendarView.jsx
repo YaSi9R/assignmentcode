@@ -72,7 +72,7 @@ const CalendarView = ({ initialDate = new Date(2021, 9, 25) }: CalendarViewProps
           const key = getKey(date)
           const slots = appointments[key] || []
           const highlighted = highlights[key] || []
-          const isHighlightedColumn = date.getDate() === 26 // change to match today's date if dynamic
+          const isHighlightedColumn = date.getDate() === 26 
 
           return (
              <div key={i} className={`calendar-day ${isHighlightedColumn ? "highlight-column" : ""}`}>

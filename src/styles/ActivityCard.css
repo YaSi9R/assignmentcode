@@ -20,18 +20,16 @@
 .card-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1e3a8a; /* Indigo-900 */
+  color: #1e3a8a; 
   margin: 0;
 }
 
 .activity-subtitle {
   font-size: 0.9rem;
-  color: #4b5563; /* Gray-600 */
+  color: #4b5563; 
 }
 
-.card-content {
-  /* You can add padding or styles here if needed */
-}
+
 
 .activity-chart {
   display: flex;
@@ -66,14 +64,14 @@
 }
 
 .bar-cyan {
-  background-color: #06b6d4; /* Cyan-500 */
+  background-color: #06b6d4;
 }
 
 .bar-blue {
-  background-color: #2563eb; /* Blue-600 */
+  background-color: #2563eb;
 }
 
 .chart-day-label {
   font-size: 0.75rem;
-  color: #374151; /* Gray-700 */
+  color: #374151;
 }

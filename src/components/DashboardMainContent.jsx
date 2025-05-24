@@ -12,11 +12,6 @@ const DashboardMainContent = ({ healthData}) => {
             <div className="dashboard-main__columns">
 
 
-
-                {/* Left Column */}
-
-
-
                 <div className="dashboard-column">
 
                     <div className="header__search">
@@ -47,7 +42,6 @@ const DashboardMainContent = ({ healthData}) => {
                         <span className="week-indicator">This Week <MdKeyboardArrowDown className="week-indicator-downArrow" /></span>
 
                     </div>
-                    {/* You can add your components here later */}
                     <DashboardOverview healthData={healthData} />
 
                 </div>
@@ -55,10 +49,7 @@ const DashboardMainContent = ({ healthData}) => {
                 {/* Right Column */}
                 <div className="dashboard-column-right">
                     <div className="header__right">
-                        {/* Notification Icon */}
 
-
-                        {/* User Profile */}
                         <div className="header__profile">
                             <div className="profile-avatar">
                                 <img src={avatar} alt="Dr. John Doe" />
@@ -66,7 +57,6 @@ const DashboardMainContent = ({ healthData}) => {
 
                         </div>
 
-                        {/* Add Button */}
                         <button className="header__add-btn" aria-label="Add new item">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" />

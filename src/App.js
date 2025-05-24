@@ -6,17 +6,13 @@ import { healthData } from "./data/healthData"
 import { appointmentsData } from "./data/appointmentsData"
 import "./styles/App.css"
 
-/**
- * Main App Component - Root component that orchestrates the layout
- * Uses Flexbox for Header, Sidebar, and DashboardMainContent layout
- */
 function App() {
   return (
     <div className="app">
       
       <Sidebar navigationItems={navigationData.general} toolItems={navigationData.tools} />
       <div className="app__main">
-        {/* <Header /> */}
+      
         <DashboardMainContent healthData={healthData}   />
       </div>
     </div>

@@ -1,6 +1,4 @@
-/**
- * Health data including anatomy indicators and status cards
- */
+
 export const healthData = {
   anatomy: {
     

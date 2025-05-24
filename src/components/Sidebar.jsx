@@ -8,8 +8,8 @@ const Sidebar = ({ navigationItems, toolItems }) => {
 
 
     return (
-        <aside className="sidebar">  {/* <-- Add this wrapper */}
-            {/* General Section */}
+        <aside className="sidebar">  
+           
             <h1 className="Sidebar__logo">Healthcare.</h1>
             <div className="sidebar__section">
                 <h2 className="sidebar__heading">General</h2>
@@ -29,7 +29,7 @@ const Sidebar = ({ navigationItems, toolItems }) => {
                 </nav>
             </div>
 
-            {/* Tools Section */}
+            
             <div className="sidebar__section">
                 <h2 className="sidebar__heading">Tools</h2>
                 <nav className="sidebar__nav" role="navigation" aria-label="Tools navigation">

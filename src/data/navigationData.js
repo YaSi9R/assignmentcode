@@ -1,6 +1,4 @@
-/**
- * Navigation links data for sidebar
- */
+
 export const navigationData = {
   general: [
     {

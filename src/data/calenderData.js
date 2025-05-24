@@ -35,7 +35,7 @@ export const appointmentData = {
   ]
 }
 
-// Highlighted appointments (important ones)
+// Highlighted appointments
 export const highlightedAppointments = {
   "2021-10-26": ["09:00"],
   "2021-10-28": ["11:00"],

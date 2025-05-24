@@ -1,9 +1,6 @@
 import "../styles/HealthStatusCards.css"
 import { FaArrowRight } from "react-icons/fa6";
 
-/**
- * HealthStatusCards Component - Displays health status cards for different body parts
- */
 const HealthStatusCards = ({ healthCards }) => {
     return (
         <div className="health-status-cards">

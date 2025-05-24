@@ -1,8 +1,6 @@
 import "../styles/AnatomySection.css"
 import Anatomy1 from "../assets/Anatomy1.jpg"
-/**
- * AnatomySection Component - Displays anatomical illustration with health indicators
- */
+
 const AnatomySection = ({ anatomyData }) => {
   return (
     <div className="anatomy-section">
@@ -13,7 +11,7 @@ const AnatomySection = ({ anatomyData }) => {
           className="anatomy-image"
         />
 
-        {/* Search/Magnify Icon */}
+        
         <button className="anatomy-search" aria-label="Examine anatomy">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2" />
@@ -21,7 +19,7 @@ const AnatomySection = ({ anatomyData }) => {
           </svg>
         </button>
 
-        {/* Health Indicators */}
+       
         {anatomyData.indicators.map((indicator, index) => (
           <div
             key={index}

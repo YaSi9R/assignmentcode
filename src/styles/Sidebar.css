@@ -1,4 +1,3 @@
-/* Sidebar component styles */
 .sidebar {
   width: 18rem;
   background: rgba(221, 244, 246, 0.95);
@@ -9,7 +8,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  border-top-left-radius: 20px;    /* adjust radius as needed */
+  border-top-left-radius: 20px;   
 border-bottom-left-radius: 20px;
 
 }
@@ -87,7 +86,6 @@ border-bottom-left-radius: 20px;
 .sidebar__link--bottom {
   margin-top: auto; 
   
-  /* background-color: #f0f0f0; */
   border-top: 1px solid #ccc;
   cursor: pointer;
   display: flex;
@@ -104,7 +102,6 @@ border-bottom-left-radius: 20px;
   border-radius: 50%;
 }
 
-/* Responsive styles */
 @media (max-width: 1024px) {
   .sidebar {
     width: 16rem;
@@ -133,7 +130,5 @@ border-bottom-left-radius: 20px;
     padding: 0.5rem;
   }
 
-  /* .sidebar__label {
-    display: none;
-  } */
+ 
 }

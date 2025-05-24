@@ -1,4 +1,3 @@
-/* Upcoming schedule styles */
 .upcoming-schedule {
   
   backdrop-filter: blur(10px);
@@ -81,7 +80,6 @@
   gap: 1rem;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
   .appointments-grid {
     grid-template-columns: 1fr;

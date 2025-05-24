@@ -1,8 +1,6 @@
 import "../styles/Header.css"
 import avatar from "../assets/avatar.jpg"
-/**
- * Header Component - Top bar with logo, search, notifications, and user profile
- */
+
 const Header = () => {
   return (
     <header className="header">
@@ -10,7 +8,7 @@ const Header = () => {
         
         
 
-        {/* Search Bar */}
+        
         <div className="header__search">
           <div className="search-icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,10 +34,7 @@ const Header = () => {
       </div>
 
       <div className="header__right">
-        {/* Notification Icon */}
        
-
-        {/* User Profile */}
         <div className="header__profile">
           <div className="profile-avatar">
             <img src={avatar} alt="Dr. John Doe" />
@@ -47,7 +42,7 @@ const Header = () => {
           
         </div>
 
-        {/* Add Button */}
+        
         <button className="header__add-btn" aria-label="Add new item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" />
