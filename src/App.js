@@ -9,11 +9,11 @@ import "./styles/App.css"
 function App() {
   return (
     <div className="app">
-      
+
       <Sidebar navigationItems={navigationData.general} toolItems={navigationData.tools} />
       <div className="app__main">
-      
-        <DashboardMainContent healthData={healthData}   />
+
+        <DashboardMainContent healthData={healthData} />
       </div>
     </div>
   )
