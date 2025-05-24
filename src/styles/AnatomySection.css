@@ -74,12 +74,17 @@ order-radius: 20px;
 /* Responsive styles */
 @media (max-width: 768px) {
   .anatomy-container {
-    width: 10rem;
-    height: 16rem;
+    width: 100vw;        /* full viewport width */
+    max-width: 100%;     /* just to be safe */
+    height: 100%;        /* adjust height automatically */
+    aspect-ratio: 3 / 5; /* maintain aspect ratio (adjust to your image's ratio) */
+    border-radius: 0;    /* optional: remove rounded corners for full edge */
   }
 
-  .anatomy-indicator {
-    font-size: 0.625rem;
-    padding: 0.375rem 0.5rem;
+  .anatomy-image {
+    width: 100%;         /* full container width */
+    height: auto;        /* keep image proportions */
+    border-radius: 0;    /* optional */
   }
 }
+

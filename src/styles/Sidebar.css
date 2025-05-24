@@ -141,7 +141,7 @@ border-bottom-left-radius: 20px;
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mobile-navbar {
     display: flex;
   }
@@ -179,17 +179,17 @@ border-bottom-left-radius: 20px;
 }
 
 
+/* @media (max-width: 1024px) {
+  .sidebar {
+    width: 16rem;
+  }
+} */
+
+/* 
 @media (max-width: 1024px) {
   .sidebar {
     width: 16rem;
   }
-}
-
-
-@media (max-width: 1024px) {
-  .sidebar {
-    width: 16rem;
-  }
-}
+} */
 
 
