@@ -143,6 +143,11 @@
 }
 
 /* Responsive styles */
+@media (max-width:1370px) {
+  .dashboard-main__columns {
+    flex-direction: column;
+  }
+}
 @media (max-width: 1024px) {
   .dashboard-main__columns {
     flex-direction: column;

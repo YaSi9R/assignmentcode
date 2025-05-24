@@ -244,3 +244,17 @@
 }
 
 }
+@media (max-width: 440px) {
+  .calendar-container {
+    transform: scale(0.8);
+    transform-origin: top left;
+    width: 125%; /* compensate for shrink to fill width */
+  }
+}
+@media (max-width: 375px) {
+  .calendar-grid {
+    transform: scale(0.85);
+    transform-origin: top left;
+    width: 100%; /* compensate for shrink to fill width */
+  }
+}

@@ -112,3 +112,69 @@
 .bar-purple {
   background-color: #5a4fcf;
 }
+@media (max-width: 385px) {
+  .activity-chart {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch; /* stretch children to full width */
+  }
+.card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+  .chart-day {
+    width: 100%;
+    flex-direction: row;  /* Show bars horizontally per day */
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chart-bar-group {
+    height: 80px; /* slightly smaller on mobile */
+  }
+
+  .bar {
+    width: 10px; /* wider bars for easier viewing on mobile */
+  }
+
+  .day-label {
+    font-size: 1rem;
+    min-width: 50px;
+    color: #444;
+  }
+}
+@media (max-width: 430px) {
+  .activity-chart {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+  }
+
+  .chart-day {
+    width: calc(50% - 8px); /* Two cards per row, considering gap */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chart-bar-group {
+    height: 80px;
+  }
+
+  .bar {
+    width: 10px;
+  }
+
+  .day-label {
+    font-size: 1rem;
+    min-width: 50px;
+    color: #444;
+  }
+}
+
