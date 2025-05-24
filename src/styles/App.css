@@ -4,8 +4,7 @@
   height: 100vh;
   overflow: hidden;
   padding: 10px;
-      cursor: pointer;
-
+  cursor: pointer;
 }
 
 .app__main {
@@ -13,20 +12,34 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-      cursor: pointer;
-
+  cursor: pointer;
 }
 
 /* Responsive design */
 @media (max-width: 1024px) {
   .app {
     flex-direction: column;
+    padding: 5px;
+    height: auto;
+  }
+
+  .app__main {
+    width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .app {
+    padding: 0;
     height: auto;
     min-height: 100vh;
+  }
+
+  .app__main {
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 1rem;
   }
 }
