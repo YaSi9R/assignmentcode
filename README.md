@@ -5,6 +5,7 @@ This project is a **static React-based dashboard UI** that visually represents a
 ---
 
 ## 📸 Preview
+![Dashboard Screenshot](https://github.com/YaSi9R/assignmentcode/blob/master/Screenshot%202025-05-25%20143727.png?raw=true)
 
 
 
