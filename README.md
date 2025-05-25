@@ -80,10 +80,9 @@ This project is a **static React-based dashboard UI** that visually represents a
 
 ## 📄 Author Info
 
-- **Name**: [Your Name]
-- **Course**: [Course/Assignment Name]
-- **Instructor**: [Instructor Name]
-- **Submission Date**: [Date]
+- **Name**: Mohd Yasir
+- **Course**: [Btech CSE III year Student]
+- **Submission Date**: [25th May 2025]
 
 ---
 
