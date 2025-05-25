@@ -9,7 +9,6 @@ const Sidebar = ({ navigationItems, toolItems }) => {
 
   return (
     <>
-      {/* Navbar / Top bar for mobile with logo + hamburger */}
       <div className="mobile-navbar">
         <h1 className="Sidebar__logo">Healthcare.</h1>
         <button
@@ -18,7 +17,6 @@ const Sidebar = ({ navigationItems, toolItems }) => {
           aria-expanded={sidebarOpen}
           onClick={() => setSidebarOpen(!sidebarOpen)}
         >
-          {/* Hamburger icon SVG */}
           {sidebarOpen ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -46,10 +44,8 @@ const Sidebar = ({ navigationItems, toolItems }) => {
         </button>
       </div>
 
-      {/* Sidebar */}
       <aside className={`sidebar ${sidebarOpen ? "sidebar--open" : "sidebar--closed"}`}>
         <div className="sidebar__content">
-          {/* You can remove logo here if you want only mobile navbar to show it */}
           <h1 className="Sidebar__logo desktop-logo">Healthcare.</h1>
 
           <div className="sidebar__section">

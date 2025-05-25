@@ -146,12 +146,12 @@
 
 @media (max-width: 768px) {
   .health-status-cards {
-    flex-direction: column; /* vertical stack */
-    gap: 1rem; /* spacing between cards */
+    flex-direction: column; 
+    gap: 1rem; 
   }
 
   .health-card {
-    width: 100%; /* full width of container */
+    width: 100%; 
   }
 }
 

@@ -1,4 +1,3 @@
-// Calendar appointment data
 export const appointmentData = {
   "2021-10-25": [
     { time: "10:00", type: "consultation" },
@@ -35,12 +34,12 @@ export const appointmentData = {
   ]
 }
 
-// Highlighted appointments
+
 export const highlightedAppointments = {
   "2021-10-26": ["09:00"],
   "2021-10-28": ["11:00"],
   "2021-10-30": ["12:00"]
 }
 
-// Day names for the calendar
+
 export const dayNames = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"]

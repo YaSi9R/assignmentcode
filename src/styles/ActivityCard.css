@@ -84,7 +84,6 @@
   font-size: 0.85rem;
   color: #666;
 }
-/* Add to your ActivityCard.css */
 
 .bar {
   width: 6px;
@@ -116,7 +115,7 @@
   .activity-chart {
     flex-direction: column;
     gap: 16px;
-    align-items: stretch; /* stretch children to full width */
+    align-items: stretch; 
   }
 .card-header {
   display: flex;
@@ -127,18 +126,18 @@
 }
   .chart-day {
     width: 100%;
-    flex-direction: row;  /* Show bars horizontally per day */
+    flex-direction: row;  
     justify-content: flex-start;
     align-items: center;
     gap: 12px;
   }
 
   .chart-bar-group {
-    height: 80px; /* slightly smaller on mobile */
+    height: 80px; 
   }
 
   .bar {
-    width: 10px; /* wider bars for easier viewing on mobile */
+    width: 10px; 
   }
 
   .day-label {
@@ -156,7 +155,7 @@
   }
 
   .chart-day {
-    width: calc(50% - 8px); /* Two cards per row, considering gap */
+    width: calc(50% - 8px); 
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;

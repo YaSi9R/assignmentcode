@@ -2,7 +2,6 @@
   /* background-color: white; */
   border-radius: 8px;
   padding: 20px;
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
 }
 
 .calendar-header {
@@ -107,7 +106,6 @@
   opacity: 0.75;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
   .calendar-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -248,13 +246,13 @@
   .calendar-container {
     transform: scale(0.8);
     transform-origin: top left;
-    width: 125%; /* compensate for shrink to fill width */
+    width: 125%; 
   }
 }
 @media (max-width: 375px) {
   .calendar-grid {
     transform: scale(0.85);
     transform-origin: top left;
-    width: 100%; /* compensate for shrink to fill width */
+    width: 100%; 
   }
 }

@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import { appointmentsData } from "../data/appointmentsData";
