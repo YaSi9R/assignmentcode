@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# 🏥 Healthcare Dashboard UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a **static React-based dashboard UI** that visually represents a **healthcare management system**. It displays health status indicators, a calendar of appointments, and user activity — all using reusable components and clean design.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📸 Preview
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📁 Component Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔷 `DashboardMainContent`
+> The main layout container which holds all dashboard elements.
 
-### `npm run build`
+### 📌 Subcomponents:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 🫀 `DashboardOverview`
+- Presents an overview of the user’s health data.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### 🧍 `AnatomySection`
+- Shows a human anatomy figure with markers:
+  - ❤️ Healthy Heart
+  - 🫁 Lungs
+  - 🦷 Teeth
+  - 🦴 Bone
+- Each has a label and color-coded status indicator (e.g., red = issue, green = healthy).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 🧾 `HealthStatusCards`
+- Three cards displaying static status info for:
+  - Lungs
+  - Teeth
+  - Bone
+- Includes checkup dates and health bars.
 
-### `npm run eject`
+#### 📆 `CalendarView`
+- A static monthly calendar showing:
+  - **October 2021**
+  - Appointment slots (e.g., 09:00, 11:00)
+  - Event cards for:
+    - 🦷 Dentist: 09:00-11:00 with Dr. Cameron Williamson
+    - 💪 Physiotherapy: 11:00-12:00 with Dr. Kevin Djones
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### 📅 `UpcomingSchedule`
+- Lists static upcoming appointments:
+  - 🧪 Health checkup complete – 11:00 AM
+  - 👁️ Ophthalmologist – 14:00 PM
+  - ❤️ Cardiologist – 12:00 AM
+  - 🧠 Neurologist – 16:00 PM
+- Uses reusable cards from `SimpleAppointmentCard`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 📊 `ActivityFeed`
+- Static visual representation of weekly activity using a CSS bar chart.
+- Text: `3 appointments on this week`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🧩 Reusable Components
 
-## Learn More
+### 🟪 `SimpleAppointmentCard`
+- Used to render each upcoming appointment.
+- Props:
+  - Title
+  - Time
+  - Icon (emoji or SVG)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🛠️ Technologies Used
 
-### Code Splitting
+- React (JSX Components)
+- HTML5 + CSS3
+- Static Data (no backend)
+- Flexbox & Grid layout styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📄 Author Info
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Name**: [Your Name]
+- **Course**: [Course/Assignment Name]
+- **Instructor**: [Instructor Name]
+- **Submission Date**: [Date]
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📌 Note
 
-### Advanced Configuration
+This is a **static UI prototype** for educational/demo purposes only. There is no functionality or backend integration in this version.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
